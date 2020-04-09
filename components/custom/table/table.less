@@ -1,0 +1,77 @@
+.enhance-table-container {
+  max-width: calc(~'100vw - 20px') !important;
+  position: relative;
+  background: #fff;
+  max-width: calc(100vw - 20px);
+  z-index: 10;
+  &.react-draggable {
+    border: 1px solid #b7b2b2;
+    overflow: hidden;
+  }
+  &::before {
+    content: "";
+    display: inline-block;
+    clear: both;
+  }
+  .ant-spin.ant-spin-spinning {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+  }
+  .enhance-table {
+    // .custom-th {
+    //   padding: 0 !important;
+    //   .drop-target-item {
+    //     padding: 16px;
+    //   }
+    // }
+    margin-top: 10px;
+    .ant-table-container {
+      position: relative;
+    }
+    .ant-table.ant-table-bordered table thead > tr > th {
+      border-top: 1px solid #f0f0f0;
+      // border-left: none;
+    }
+    .ant-table.ant-table-bordered table thead > tr > th[colspan] {
+      border-bottom: none;
+    }
+  }
+}
+.react-resizable {
+  position: relative;
+  background-clip: padding-box;
+}
+
+.react-resizable-handle {
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  bottom: 0;
+  right: -5px;
+  cursor: col-resize !important;
+  z-index: 1;
+}
+.not-select{
+  user-select:none;
+}
+.grid-proxy {
+  // position: absolute;
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+  background: gray;
+  opacity: .3;
+  border: solid 1px black;
+  z-index: 100000000;
+  box-sizing: border-box;
+}
+.inner-packing::before {
+  content: "";
+  display: inline-block;
+  clear: both;
+}
+.cancel {
+  cursor: auto;
+}

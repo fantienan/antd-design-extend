@@ -1,0 +1,59 @@
+.ant-form-item {
+    margin-bottom: 0 !important;
+    &.UPLOAD {
+        height: 104px;
+    }
+    &.RADIO_GROUP {
+        .ant-form-item-children-icon {
+            right: -16px;
+        }
+    }
+    &.TEXT_AREA {
+        .ant-col.ant-form-item-control {
+            width: calc(~'100% - 100px')
+        }
+    }
+    &.CHECKBOX_GROUP, &.UPLOAD, &.TEXT_AREA {
+        .cmp-container {
+            width: 100%;
+        } 
+    }
+    .ant-form-item-children-icon {
+        left: 188px !important;
+    }
+    .cmp-container{
+        width: 220px;
+        // .ant-select {
+        //     width: 220px;
+        // }
+        &.ant-tooltip-open {
+            .cmp-tooltip {
+                display: none !important;
+            }
+        }
+        .cmp-tooltip .title {
+            white-space: nowrap;
+        }
+        .ant-input {
+            margin-bottom: 0 !important;
+        }
+    }
+    &.ant-form-item-has-feedback {
+        &.ant-form-item-has-error {
+            .cmp-container.ant-tooltip-open {
+                .cmp-tooltip {
+                    display: unset !important;
+                }
+            }
+        }
+        .ant-select-clear {
+            right: 26px;
+        }
+    }
+}
+
+.ant-form-item-has-feedback {
+    .ant-form-item-explain {
+        display: none !important;
+    }
+}
