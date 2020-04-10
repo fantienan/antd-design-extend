@@ -6,7 +6,7 @@ const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const darkVars = require('./scripts/dark-vars');
 const compactVars = require('./scripts/compact-vars');
-
+const pkg = require('./package.json')
 const { webpack } = getWebpackConfig;
 
 // noParse still leave `require('./locale' + name)` in dist files
@@ -17,8 +17,8 @@ function ignoreMomentLocale(webpackConfig) {
 }
 
 function addLocales(webpackConfig) {
-  let packageName = 'antd-with-locales';
-  if (webpackConfig.entry['antd.min']) {
+  let packageName = `${pkg.name}-with-locales`;
+  if (webpackConfig.entry[`${pkg.name}.min`]) {
     packageName += '.min';
   }
   webpackConfig.entry[packageName] = './index-with-locales.js';
@@ -38,10 +38,9 @@ function processWebpackThemeConfig(themeConfig, theme, vars) {
   themeConfig.forEach(config => {
     ignoreMomentLocale(config);
     externalMoment(config);
-
     // rename default entry to ${theme} entry
     Object.keys(config.entry).forEach(entryName => {
-      config.entry[entryName.replace('antd', `antd.${theme}`)] = config.entry[entryName];
+      config.entry[entryName.replace(pkg.name, `${pkg.name}.${theme}`)] = config.entry[entryName];
       delete config.entry[entryName];
     });
 
@@ -65,7 +64,7 @@ function processWebpackThemeConfig(themeConfig, theme, vars) {
           project_token: '30c6a021-96c0-4d67-8bd2-0d2fcbd8962b',
           upload: process.env.CI === 'true',
           fail_build: false,
-          exclude_assets: name => ![`antd.${theme}.min.js`, `antd.${theme}.min.css`].includes(name),
+          exclude_assets: name => ![`${pkg.name}.${theme}.min.js`, `${pkg.name}.${theme}.min.css`].includes(name),
         }),
       );
     }
@@ -75,6 +74,7 @@ function processWebpackThemeConfig(themeConfig, theme, vars) {
 const webpackConfig = getWebpackConfig(false);
 const webpackDarkConfig = getWebpackConfig(false);
 const webpackCompactConfig = getWebpackConfig(false);
+
 if (process.env.RUN_ENV === 'PRODUCTION') {
   webpackConfig.forEach(config => {
     ignoreMomentLocale(config);
@@ -90,11 +90,11 @@ if (process.env.RUN_ENV === 'PRODUCTION') {
           project_token: '30c6a021-96c0-4d67-8bd2-0d2fcbd8962b',
           upload: process.env.CI === 'true',
           fail_build: false,
-          exclude_assets: name => !['antd.min.js', 'antd.min.css'].includes(name),
+          exclude_assets: name => ![`${pkg.name}.min.js`, `${pkg.name}.min.css`].includes(name),
         }),
         new BundleAnalyzerPlugin({
           analyzerMode: 'static',
-          openAnalyzer: false,
+          openAnalyzer: process.env.OPEN_ANALYZER ? true : false, 
         }),
       );
     }

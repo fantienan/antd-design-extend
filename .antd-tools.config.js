@@ -4,6 +4,7 @@ const path = require('path');
 const packageInfo = require('./package.json');
 const darkVars = require('./scripts/dark-vars');
 const compactVars = require('./scripts/compact-vars');
+const pkg = require('./package.json')
 
 // We need compile additional content for antd user
 function finalizeCompile() {
@@ -53,7 +54,7 @@ function finalizeCompile() {
 function buildThemeFile(theme, vars) {
   // Build less entry file: dist/antd.${theme}.less
   fs.writeFileSync(
-    path.join(process.cwd(), 'dist', `antd.${theme}.less`),
+    path.join(process.cwd(), 'dist', `${pkg.name}.${theme}.less`),
     `@import "../lib/style/${theme}.less";\n@import "../lib/style/components.less";`,
   );
 
@@ -75,7 +76,7 @@ function finalizeDist() {
   if (fs.existsSync(path.join(__dirname, './dist'))) {
     // Build less entry file: dist/antd.less
     fs.writeFileSync(
-      path.join(process.cwd(), 'dist', 'antd.less'),
+      path.join(process.cwd(), 'dist', `${pkg.name}.less`),
       '@import "../lib/style/index.less";\n@import "../lib/style/components.less";',
     );
     // eslint-disable-next-line

@@ -8,7 +8,7 @@ import { DndProvider } from 'react-dnd';
 import Backend from 'react-dnd-html5-backend';
 import CustomDragLayer from './CustomDragLayer'
 import Item from './Item'
-import './styles.less'
+import '../style/index.less'
 export default function DragProvider(props) {
     return (
         <DndProvider backend={Backend}>

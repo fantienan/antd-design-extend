@@ -32,7 +32,12 @@ config/base.yaml
 /.vscode/
 /coverage
 yarn.lock
+yarn.error.log
 package-lock.json
+package-antd.json
+tsconfig.md
+webpack.config-antd.js
+.antd-tools.config-antd.js
 components/**/*.js
 components/**/*.jsx
 !components/**/__tests__/**/*.js

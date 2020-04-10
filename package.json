@@ -1,6 +1,6 @@
 {
   "name": "antd-design-extend",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "antd-design 二次封装组件库",
   "keywords": [
     "ant",
@@ -79,8 +79,9 @@
     "test-node": "jest --config .jest.node.js --no-cache",
     "tsc": "tsc",
     "site:test": "jest --config .jest.site.js --cache=false",
-    "fix-memory-limit": "cross-env LIMIT=4096 increase-memory-limit",
-    "type-check": "tsc --watch"
+    "fix-memory-limit": "cross-env LIMIT=5120 increase-memory-limit",
+    "type-check": "tsc --watch",
+    "analyz": "cross-env OPEN_ANALYZER=true npm run build"
   },
   "husky": {
     "hooks": {
@@ -96,6 +97,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.0.0",
     "@ant-design/react-slick": "~0.25.5",
+    "@types/react-resizable": "^1.7.2",
     "@types/react-virtualized": "^9.21.8",
     "abortcontroller-polyfill": "^1.4.0",
     "array-tree-filter": "^2.1.0",
@@ -187,7 +189,7 @@
     "chalk": "^3.0.0",
     "cheerio": "^1.0.0-rc.3",
     "concurrently": "^5.0.2",
-    "cross-env": "^7.0.0",
+    "cross-env": "^7.0.2",
     "css-split-webpack-plugin": "^0.2.6",
     "dekko": "^0.2.1",
     "docsearch.js": "^2.6.3",

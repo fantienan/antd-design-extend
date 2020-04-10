@@ -13,7 +13,7 @@ import * as _ from 'lodash';
 import { debounce, stringify, isArray, isUndefined } from '../utils/tools';
 import { LIST_HEIGHT, LIST_ROW_HEIGHT, DEFAULT_NAME_KEY, DEFAULT_VALUE_KEY } from '../utils';
 import { utils } from '../form'
-import './styles.less';
+import './style/index.less';
 
 const WIDTH = 20; // 前缀、后缀的宽度
 const CHECKED = 'checked'; // 选中

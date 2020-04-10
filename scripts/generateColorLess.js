@@ -5,7 +5,7 @@ const genCss = require('antd-pro-merge-less');
 const dark = require('./dark-vars');
 const compact = require('./compact-vars');
 
-genCss(
+genCss( 
   path.join(__dirname, '..'),
   [
     {

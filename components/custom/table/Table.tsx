@@ -15,7 +15,7 @@ import ToolBar from './ToolBar';
 import useMemoHoc from '../useMemoHoc';
 import DragProvider from './DragProvider'
 import Extension from './Extension'
-import './table.less';
+import './style/index.less';
 
 
 /**

@@ -9,7 +9,7 @@ import * as _ from 'lodash';
 import NoData from '../no-data';
 import { stringify, isArray } from '../utils/tools';
 import { LIST_HEIGHT, LIST_ROW_HEIGHT, DEFAULT_NAME_KEY, DEFAULT_VALUE_KEY, WIDTH } from '../utils';
-import './styles.less';
+import './style/index.less';
 
 function DefaultPrefix(props) {
 	return <div className='prefix-box'>

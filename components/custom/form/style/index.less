@@ -1,4 +1,30 @@
-.ant-form-item {
+
+// @import '../../../style/index.less';
+// @import '../../../input/style/index.less';
+// @import '../../../button/style/index.less';
+
+.dynamic-form {
+    flex-direction: column;
+    .row {
+        display: flex;
+        min-height: 44px !important;
+        margin-bottom: 8px;
+        .ant-row {
+            flex: 1;
+            display: flex;
+            .ant-form-item-label {
+                width: 100px;
+            }
+            .ant-form-item-control {
+                width: calc(~'100% - 100px');
+            }
+        }
+        .placeholder {
+            display: none !important;
+        }
+    }
+}
+.ant-form-item._c_ {
     margin-bottom: 0 !important;
     &.UPLOAD {
         height: 104px;
@@ -49,11 +75,8 @@
         .ant-select-clear {
             right: 26px;
         }
-    }
-}
-
-.ant-form-item-has-feedback {
-    .ant-form-item-explain {
-        display: none !important;
+        .ant-form-item-explain {
+            display: none !important;
+        }
     }
 }

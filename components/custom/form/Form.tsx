@@ -8,7 +8,7 @@ import { Provider } from './context';
 import FormItem from './FormItemWrapper';
 import { utils } from './utils';
 import { TYPE_MAP } from './config';
-import './styles/formStyles.less'
+import './style/index.less'
 
 /**
  * @param {object} props

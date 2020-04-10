@@ -2,7 +2,7 @@
 // @ts-nocheck
 import ioContext from '../utils/http/io-context';
 
-ioContext.create('table', {
+ioContext.create('selectTree', {
     getEntityList: {
         url: '/api/forestarui_v0.4/form/getEntityList.do',
         method: "POST",
@@ -14,5 +14,5 @@ ioContext.create('table', {
         formData: true
     },
 })
-export default ioContext.api.table
+export default ioContext.api.selectTree
 

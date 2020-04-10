@@ -9,7 +9,7 @@ import * as _ from 'lodash';
 import { stringify } from '../utils/tools';
 import { handleDownload } from './utils';
 import 'viewerjs-extend/dist/viewer.css';
-import './style.less';
+import './style/index.less';
 
 const VIEWER_CONTAINER_CLS = "rc-viewer-extend-container";
 const VIEWER_ITEM_CLS = "rc-viewer-item";
@@ -183,6 +183,7 @@ function EnhancedUpload(props) {
 
   return (
     <Upload
+      className="custom-upload"
       name={name}
       action={action}
       listType={listType}

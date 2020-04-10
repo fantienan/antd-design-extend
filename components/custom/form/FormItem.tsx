@@ -9,7 +9,7 @@ import Empty from './Empty';
 import { utils } from './utils';
 import { MODES } from '../utils';
 import { isString, isArray, isFunction, isUndefined, isNull } from '../utils/tools'
-import './styles/formItemStyles.less';
+import './style/index.less';
 
 /**
  * @param {object} props
@@ -77,7 +77,7 @@ function FormItem(props = {}, ref) {
         const { className = '' } = props;
         const c_1 = {
             hasFeedback: !!(props.rules || []).length,
-            className: `${className} ${type}`,
+            className: `${className} ${type} _c_`,
             colon: false
         };
         const c_2 = {

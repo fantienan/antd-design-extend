@@ -1,8 +1,9 @@
 // @ts-nocheck
 import * as React from 'react'
-import { CaretUpOutlined, CaretDownOutlined } from '@ant-design/icons';
-import './style.less'
-const ASC = 'asc', DES = 'des';
+import { CaretUpOutlined, CaretDownOutlined } from '@ant-design/icons'
+import '../style/extension.less'
+
+const ASC = 'asc', DES = 'des'
 const style = {
     color: '#1890ff'
 }

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Form from '../../form';
 import useMemoHoc from '../../useMemoHoc';
 import Dropdown from './Dropdown'
-import './toolBar.less';
+import '../style/index.less';
 
 
 /**
