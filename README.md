@@ -1,3 +1,5 @@
+
+
 ## 基于ant-design扩展组件
 ant-design 的二次封装组件库，扩展功能与ant-design无感知引用
 
@@ -9,6 +11,8 @@ npm install --save antd-design-extend
 ```
 yarn add antd-design-extend
 ```
+
+> 需要 `react` 和 `react-dom` 版本不低于 16.9.0。
 
 #### 用法
 ```jsx
